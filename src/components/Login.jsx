@@ -40,7 +40,7 @@ const Login = () => {
         />
       </Form.Group>
       <Button
-        className="sign-up"
+        className="me-2 mt-2"
         onClick={() => logInWithEmailAndPassowrd(email, password)}
       >
         Log in

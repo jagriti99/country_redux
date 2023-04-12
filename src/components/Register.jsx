@@ -56,7 +56,7 @@ const Register = () => {
         />
       </Form.Group>
 
-      <Button className="sign-up" onClick={register}>
+      <Button className="me-2 mt-2" onClick={register}>
         Register
       </Button>
       <div>

@@ -48,6 +48,7 @@ const Countries = () => {
               .toLowerCase()
               .includes(search.toLowerCase());
           })
+          .sort((a, b) => a.name.common.localeCompare(b.name.common))
           .map((country, i) => (
             <Col key={i} className="mt-5">
               <LinkContainer

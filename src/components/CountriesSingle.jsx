@@ -14,9 +14,8 @@ const CountriesSingle = () => {
   const [weather, setWeather] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
-  // const [border, setBorder] = useState([]);
+
   const allCountriesList = useSelector((state) => state.countries.countries);
-  console.log(country);
 
   useEffect(() => {
     axios
@@ -63,7 +62,7 @@ const CountriesSingle = () => {
           {!error && (
             <div>
               <p>
-                Right now it is <strong>{parseInt(weather.main.temp)}</strong>{" "}
+                Currently it's <strong>{parseInt(weather.main.temp)}</strong>{" "}
                 degrees in {country.capital} and{" "}
                 {weather.weather[0].description}
               </p>
@@ -82,17 +81,20 @@ const CountriesSingle = () => {
                     (country) => country.cca3 === borderCCa3
                   )
                 )
-                .map((borderCountry) => {
+                .map((connectCountry) => {
+                  // const key = connectCountry.name.common;
+                  // console.log("key:", key);
                   return (
                     <Button
+                      key={connectCountry.name.common}
                       className="me-2 mt-2"
                       onClick={() =>
-                        navigate(`/countries/${borderCountry.name.common}`, {
-                          state: { selectedCountry: borderCountry },
+                        navigate(`/countries/${connectCountry}`, {
+                          state: { country: connectCountry },
                         })
                       }
                     >
-                      {borderCountry.name.common}
+                      {connectCountry.name.common}
                     </Button>
                   );
                 })
