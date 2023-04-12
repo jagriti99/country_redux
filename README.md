@@ -1,4 +1,4 @@
-![Country App](/Users/yourusername/Desktop/country-bootstrap-redux-app/countryapp.png)
+![Country App](countryapp.png)
 
 # Getting Started with Create React App
 
