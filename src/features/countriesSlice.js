@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import countryService from "../../services/countries";
+import countryServices from "../services/countries";
 
 export const countriesSlice = createSlice({
   name: "countries",
@@ -19,11 +19,12 @@ export const countriesSlice = createSlice({
 
 export const initializeCountries = () => {
   return async (dispatch) => {
-    const countries = await countryService.getAll();
+    const countries = await countryServices.getAll();
     dispatch(getCountries(countries));
     dispatch(isLoading(false));
   };
 };
 
 export const { getCountries, isLoading } = countriesSlice.actions;
+
 export default countriesSlice.reducer;

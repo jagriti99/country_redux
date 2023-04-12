@@ -1,0 +1,63 @@
+.container {
+    margin: .5vh;
+}
+.countriesCard{
+    max-width: 100%;
+    min-height: 40vh;
+    transition:0.5s;
+    cursor:pointer;
+    color: aliceblue;
+    background-color: rgb(3, 52, 73);
+  }
+  .countriesCard .favIcon {
+    position: absolute;
+    background-color: rgb(251, 251, 251);
+    border-radius: 45%;
+    top: 0;
+    right: 0;
+    margin: 1vh;
+    font-size: 2.5vh;
+    color: #37342f;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .countriesCard-title{  
+    font-size:3vh;
+    transition:1s;
+    cursor:pointer;
+  }
+  .card-icon i{  
+    font-size:2.2vh;
+    transition:.1s;
+    cursor:pointer;
+    color:#5e5c59
+  }
+  .card-icon i:hover{
+    transform: scale(1.25) rotate(100deg); 
+    color:#052637;
+  }
+.countriesCard:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+  }
+.countriesCard::before, .countriesCard::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: scale3d(0, 0, 1);
+    transition: transform .3s ease-out 0s;
+    background: rgba(255, 255, 255, 0.1);
+    content: '';
+    pointer-events: none;
+  }
+.countriesCard::before {
+    transform-origin: left top;
+}
+.countriesCard::after {
+    transform-origin: right bottom;
+}
+.countriesCard:hover::before, .countriesCard:hover::after, .countriesCard:focus::before, .countriesCard:focus::after {
+    transform: scale3d(1, 1, 1);
+}
