@@ -1,4 +1,4 @@
-![Screenshot of my Mac desktop](/Users/yourusername/Desktop/countryapp.png)
+![Country App](/Users/yourusername/Desktop/country-bootstrap-redux-app/countryapp.png)
 
 # Getting Started with Create React App
 
